@@ -1,0 +1,29 @@
+@use 'variables';
+@use 'initial';
+
+@mixin card($url){
+    width: 288px;
+    height: 160px;
+    color: variables.$White;
+    padding: 20px;
+    background: {
+            image: url($url);
+            size: contain;
+            repeat: no-repeat;
+        };
+     @media (min-width:1220px){
+        width: 450px;
+        height: 247px;
+        padding: 38px;
+     }
+}
+
+@mixin card-position($m-top, $m-left,$d-top,$d-left){
+    position: absolute;
+    top: $m-top;
+    left: $m-left;
+    @media (min-width:1220px){
+        top: $d-top;
+        left:$d-left;
+    }
+}
